@@ -26,7 +26,7 @@ public class Cinema implements Serializable {
 	private int nombreSalles;
 	
 	@OneToMany(mappedBy = "cinema")
-	private Collection<Salle>sales;
+	private Collection<Salle>salles;
 	
 	@ManyToOne
 	private Ville ville;
