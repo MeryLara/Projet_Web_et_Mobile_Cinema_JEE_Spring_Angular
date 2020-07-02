@@ -137,12 +137,12 @@ public class CinemaServiceImplt implements ICinemaInitService{
 	public void initFilm() {
 		double[] durees=new double [] {1,1.5,2.5,3};
 		List<Categorie>categories=categorieRepository.findAll();
-		Stream.of("12 Hommes en collaire","Forrest Gump","Green Book","La ligne Verte","Le Parin","Le Seigneur des anneaux")
+		Stream.of("12 Hommes en colere","Forrest Gump","Green Book","La ligne Verte","Le Parrain","Le Seigneur Des Anneaux")
 		.forEach(titreFilm->{
 			Film film=new Film();
 			film.setTitre(titreFilm);
 			film.setDuree(durees[new Random().nextInt(durees.length)]);
-			film.setPhoto(titreFilm.replaceAll(" ", ""));
+			film.setPhoto(titreFilm.replaceAll(" ", "")+".jpg");
 			film.setCategorie(categories.get(new Random().nextInt(categories.size()))); 	
 			filmRepository.save(film);
 			
